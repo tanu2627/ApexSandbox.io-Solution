@@ -1,0 +1,6 @@
+public Boolean isTypeAccount(sObject record)
+{
+    Boolean Result = record instanceof Account;
+    return Result;
+
+}
