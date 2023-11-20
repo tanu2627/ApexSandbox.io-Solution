@@ -1,15 +1,12 @@
 public String registerStudent(String name, String phone, String email) {
-    //name, phone, email 
-    //insert in obj apxio__Student__c - name phone and email.
-    //return regis num.
     apxio__Student__c st = new apxio__Student__c();
     st.Name=name;
     st.apxio__Email__c = email;
     st.apxio__Phone__c = phone;
     insert st;
 
-    String apxio__Registration_Number__c = [Select Id from apxio__Student__c];
-    return apxio__Registration_Number__c;
+    apxio__Student__c Reg_Number = [Select Id from apxio__Student__c where Id = st.Id];
+    return Reg_Number;
 
 
 }
