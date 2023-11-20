@@ -8,7 +8,7 @@ public String registerStudent(String name, String phone, String email) {
     st.apxio__Phone__c = phone;
     insert st;
 
-    apxio__Registration_Number__c = [Select Id from apxio__Student__c];
+    String apxio__Registration_Number__c = [Select Id from apxio__Student__c];
     return apxio__Registration_Number__c;
 
 
