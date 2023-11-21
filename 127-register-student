@@ -1,11 +1,11 @@
 public String registerStudent(String name, String phone, String email) {
-    apxio__Student__c st = new apxio__Student__c()
+    apxio__Student__c st = new apxio__Student__c();
     st.Name=name;
     st.apxio__Email__c = email;
     st.apxio__Phone__c = phone;
     insert st;
 
-    apxio__Student__c Reg_Number = [Select Id from apxio__Student__c where Id =: st.Id];
+    apxio__Student__c Reg_Number = [Select Id,Name from apxio__Student__c where Id =: st.Id];
     return st.Reg_Number;
 
 }
