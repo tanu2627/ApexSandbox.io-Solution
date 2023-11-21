@@ -4,7 +4,7 @@ public String registerStudent(String name, String phone, String email) {
     apxio__Email__c = email,
     apxio__Phone__c = phone
     );
-    insert st;
+    Insert st;
 
     apxio__Student__c RegNumber = [
         Select Id,Name, 
