@@ -5,7 +5,7 @@ public String registerStudent(String name, String phone, String email) {
     st.apxio__Phone__c = phone;
     insert st;
 
-    apxio__Student__c Reg_Number = [Select Id,Name from apxio__Student__c where Id =: st.Id];
-    return st.Reg_Number;
+    apxio__Student__c Reg_Number = [Select Id,Name, apxio__Registration_Number__c from apxio__Student__c where Id =: st.Id];
+    return Reg_Number.apxio__Registration_Number__c;
 
 }
